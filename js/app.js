@@ -41,7 +41,8 @@ pixelConfig.className = classe;
 menu.appendChild(pixelConfig);
 }
 
-createInput('number', 'Taille de la grille', 'Taille de la grille', 'Taille de la grille (Max : 25)', 'gridSize', 0, 25);
+createInput('number', 'Taille de la grille', 'Taille de la grille', 'Taille de la grille (Max : 25)', 'gridSize', 0
+1, 25);
 createInput('number', 'Taille des pixels', 'Taille des pixels', 'Taille de la case (en pixels)', 'pixelSize', 10, 20 );
 createInput('submit', 'Valider', 'Valider', null, 'validate');
 
