@@ -21,20 +21,22 @@ function createGrid(size) {
     }  
 }
 
-function createInput(type, name, value, placeholder, classe) {
+function createInput(type, name, value, placeholder, classe, min, max) {
 const menu = document.querySelector('.configuration');
 const pixelConfig = document.createElement('input');
 pixelConfig.setAttribute("type", type);
 pixelConfig.setAttribute("name", name);
 pixelConfig.setAttribute("value", value)
 pixelConfig.setAttribute ("placeholder", placeholder);
+pixelConfig.setAttribute ("min", min);
+pixelConfig.setAttribute ("max", max);
 pixelConfig.className = classe;
 menu.appendChild(pixelConfig);
 }
 
-createInput('number', 'Taille de la grille', 'Taille de la grille', 'Taille de la grille (Max : 25)', 'gridSize');
-createInput('number', 'Taille des pixels', 'Taille des pixels', 'Ne pas remplir', 'pixelSize');
-createInput('submit', 'Valider', 'Valider', '', 'validate');
+createInput('number', 'Taille de la grille', 'Taille de la grille', 'Taille de la grille (Max : 25)', 'gridSize', 0, 25);
+createInput('number', 'Taille des pixels', 'Taille des pixels', 'Taille de la case (en pixels)', 'pixelSize', 10, 20 );
+createInput('submit', 'Valider', 'Valider', null, 'validate');
 
 
 document.getElementsByTagName('form')[0].addEventListener('submit', function(evt) {
