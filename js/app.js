@@ -2,22 +2,29 @@ const mainSquare = document.createElement('div');
 invader.appendChild(mainSquare);
 mainSquare.classList.add('mainSquareStyle');
 
-function createGrid(size) {
+function createGrid(sizeGrid, sizePixel) {
     // on dit qu'on début de notre fonction, la page html doit renvoyer du 
     // vide ( "" ) au niveau de mainSquare. En gros, ça vide la grille
     mainSquare.innerHTML = "";
         // on crée une div 'row' qui représente une ligne de longueur 'size' carrés
-        for(let i = 0; i <= size - 1; i++) {
+        for(let i = 0; i <= sizeGrid - 1; i++) {
         const row = document.createElement('div');
         row.classList.add('row')
         // on crée 'size' div de carrés invdividuels sur notre ligne 'row'
-        for(let j = 0; j <= size - 1; j++) {
+        for(let j = 0; j <= sizeGrid - 1; j++) {
             const pixel = document.createElement('div');
             row.appendChild(pixel);
             pixel.classList.add('square');
+        // changer le style des cases (class CSS square)
+            pixel.style.width = sizePixel + 'px';
+            pixel.style.height = sizePixel + 'px';
         }
         // on rattache 'row' à notre conteneur, la div 'mainSquare"
         mainSquare.appendChild(row)
+
+        // const widthPixel = document.querySelector(".square");
+        // widthPixel.style.width = sizePixel + 'px';
+        // widthPixel.style.height = sizePixel + 'px';
     }  
 }
 
@@ -43,8 +50,9 @@ document.getElementsByTagName('form')[0].addEventListener('submit', function(evt
     evt.preventDefault();
     
     const userValue = document.querySelector('.gridSize').value;
+    const userPixel = document.querySelector('.pixelSize').value;
 
-    createGrid(userValue);
+    createGrid(userValue, userPixel);
 
     const allPixels = document.querySelectorAll('.square');
 
