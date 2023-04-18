@@ -21,10 +21,12 @@ body {
 .configuration :first-child {
     border: 3px solid #3147AD;
     border-radius: 10px 0 0 10px / 10px 0 0 10px; 
+    width: 25rem;
 }
 
 .configuration :nth-child(2) {
     border: 3px solid #3147AD;
+    width: 25rem;
 }
 
 .configuration :last-child {
