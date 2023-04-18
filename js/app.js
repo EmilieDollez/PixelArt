@@ -21,9 +21,6 @@ function createGrid(size) {
     }  
 }
 
-
-
-
 function createInput(type, name, value, classe) {
 const menu = document.querySelector('.configuration');
 const pixelConfig = document.createElement('input');
@@ -56,11 +53,4 @@ document.getElementsByTagName('form')[0].addEventListener('submit', function(evt
         })
 } )
 });
-
-//   function gridSize (grid) {
-//     const userSize = document.querySelector("input").value;
-//     return userSize;
-// }
-
-// gridSize ();
 
